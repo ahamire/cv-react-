@@ -26,6 +26,14 @@
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "vite.config.js",
-  "author": "",
-  "license": "ISC"
+  "author": "ahamire",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahamire/cv-react-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahamire/cv-react-/issues"
+  },
+  "homepage": "https://github.com/ahamire/cv-react-#readme"
 }
