@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useEffect } from 'react' 
 import './App.css'
 import Title_of_resume from './title'
 import Education from './education'
@@ -22,6 +23,15 @@ function App() {
     setPhone(event.target.value);
   };
   const [isOpen, setIsOpen] = useState(false);
+  const [University_name, setUniversity_name] = useState("");
+  const [Description, setDescription_name] = useState("");
+  const [date, setDate_name] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setUniversity_name("");
+    setDescription_name("");
+    setDate_name("");
+  }; 
   const [isOpen1, setIsOpen1] = useState(false);
   return (
     <>
@@ -35,7 +45,14 @@ function App() {
         </form>
         </section>
       <button onClick={() => setIsOpen(!isOpen)}>Education</button>
-      <div className={isOpen ? "visible_div" : "hiden_div"}>s</div>
+      <div className={isOpen ? "visible_div" : "hiden_div"}>
+      <form onSubmit={handleSubmit} style={{"display":'flex',"flex-direction":"column","width":"250px","justify-content":"center"}} className="get_submit">
+          <input type="text" placeholder=''  value={University_name} onChange={(e) =>setUniversity_name(e.target.value)} required/>
+          <input type='text' name="" id="" value={Description} onChange={(e) =>setDescription_name(e.target.value)} required/>
+          <input type="date" name="" id=""  value={date} onChange={(e) =>setDate_name(e.target.value)} required/>
+          <button type='submit'>+</button>
+        </form>
+      </div>
       <button onClick={() => setIsOpen1(!isOpen1)}>Work Expirience</button>
       <div className={isOpen1 ? "visible_div" : "hiden_div"}>s</div>
       </section>
@@ -44,7 +61,7 @@ function App() {
       <div className='resume'>
       <Title_of_resume name={name} email={email} Phone={Phone}/>{/*looks like function title_of_resume(name) */}
       <section className="education">
-        <Education />
+        <Education University_name={University_name} Description={Description} date={date} />
       </section>
       <section className='work_exp'>
         <Work_exp />
