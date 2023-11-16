@@ -5,6 +5,22 @@ import Education from './education'
 import Work_exp from './Work_exp'
 import Skills from './Skills'
 function App() {
+  const [name, setName] = useState("");
+  
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const [email, setEmail] = useState("");
+  
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const [Phone, setPhone] = useState("");
+  
+  const handlePhoneChange = (event) => {
+    setPhone(event.target.value);
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
   return (
@@ -13,9 +29,9 @@ function App() {
       <section className="edit_title"><p>Resume Editor</p>
       <section style={{"display":'flex',"justify-content":"center"}}>
         <form method="dialog" style={{"display":'flex',"flex-direction":"column","width":"250px","justify-content":"center"}}>
-          <input type="text" placeholder='enter name'/>
-          <input type="email" name="" id="" />
-          <input type="tel" name="" id="" maxLength={9} placeholder='phone number ex.(+3803278329)'/>
+          <input type="text" placeholder='enter name' className='name_inp' value={name}  onChange={handleNameChange}/>
+          <input type="email" name="" id="" className='email_inp' value={email} onChange={handleEmailChange}/>
+          <input type="tel" name="" id="" maxLength={9} placeholder='phone number ex.(+3803278329)' className='phone_inp' value={Phone} onChange={handlePhoneChange}/>
         </form>
         </section>
       <button onClick={() => setIsOpen(!isOpen)}>Education</button>
@@ -26,7 +42,7 @@ function App() {
     </div>
     <div className='cv'>
       <div className='resume'>
-      <Title_of_resume />
+      <Title_of_resume name={name} email={email} Phone={Phone}/>{/*looks like function title_of_resume(name) */}
       <section className="education">
         <Education />
       </section>

@@ -1,10 +1,12 @@
-function Title_of_resume(){
+import { useState } from "react";
+
+function Title_of_resume({name,email,Phone}){
     return(
     <section className='title'>
-        <p style={{"font-size":"50px"}}>John Doe</p>
+        <p style={{"font-size":"50px"}}className="inp">{name}</p>
         <div className="contact">
-          <h3 className="e-mail">joe@gmail.com</h3>
-          <h3 className="phone">+3803782733</h3>
+          <h3 className="e-mail">{email}</h3>
+          <h3 className="phone">{Phone}</h3>
         </div>
       </section>
     )
