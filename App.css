@@ -1,0 +1,35 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.cv{
+  width: 50%;
+}
+.edit{
+  width: 40%;
+  border:#3782AC solid 20px;
+  border-radius: 4px;
+  margin-top: 50px;
+  height: 100vh;
+  background-color: white;
+  color: black;
+}
+.resume{
+  background-color: white;
+  width: 90%;
+  height: 99%;
+  margin-top: 20px;
+  box-shadow: -4px 2px 4px 0px rgba(47, 47, 48, 0.25);
+}
+.title{
+  height: 150px;
+  background: #3782AC;
+}
+.title2{
+  color: slateblue;
+}
